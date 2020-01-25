@@ -1,0 +1,15 @@
+[
+    { "error": "NOTRANSLATE_", "fix": "" },
+    { "error": "NOTRANSLAT_", "fix": "" },
+    { "error": " NOTRANSLAT_", "fix": "" },
+    { "error": "\" NOTRANSLATE_", "fix": "" },
+    { "error": "] (", "fix": "](" },
+    { "error": "/ ", "fix": "/" },
+    { "error": " /", "fix": "" },
+    { "error": "„", "fix": "\"" },
+    { "error": "”", "fix": "\"" },
+    { "error": "“", "fix": "\"" },
+    { "error": "«", "fix": "\"" },
+    { "error": "»", "fix": "\"" },
+    { "error": "：", "fix": ": " }
+]

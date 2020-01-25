@@ -1,0 +1,36 @@
+[en]
+languageName = "English"
+contentDir = "content/en"
+weight = 2
+title = "DocuAPI Example Site"
+
+[fr]
+languageName = "French"
+contentDir = "content/fr"
+weight = 2
+title = "DocuAPI Example Site"
+
+[zh-cn]
+languageName = "Chinese"
+contentDir = "content/zh-cn"
+weight = 2
+title = "DocuAPI Example Site"
+
+[de]
+languageName = "German"
+contentDir = "content/de"
+weight = 2
+title = "DocuAPI Example Site"
+
+[es]
+languageName = "Spanish"
+contentDir = "content/es"
+weight = 2
+title = "DocuAPI Example Site"
+
+[he]
+languageName = "Hebrew"
+contentDir = "content/he"
+weight = 2
+title = "DocuAPI Example Site"
+

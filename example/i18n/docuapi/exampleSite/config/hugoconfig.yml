@@ -1,0 +1,19 @@
+content:
+  ID: 1VvNEPpTzTJbYvSu9SRvc9BmeYVtSprQmmwqY3CAK7gM
+  URL: https://docs.google.com/spreadsheets/d/1VvNEPpTzTJbYvSu9SRvc9BmeYVtSprQmmwqY3CAK7gM
+  CSV: https://docs.google.com/spreadsheets/d/e/2PACX-1vSqNo3Li7zrKSqIRDbykSipeT4RtsyrAM0iL3WoWdr6XnPtOf9NsYkV2xYV5N0dR4uNM7YeZyXXiuTT/pub?output=csv
+  MERGE: "cell"
+  OUT_DIR: "content/XXX/"
+  FILE_NAME: "" 
+  EXTENSION: ""
+
+languages:
+  ID: 1y6TdPrs-iUrHZ8XDv7PoCdBa5uimSHwmgNj4dhZs5Lc
+  URL: https://docs.google.com/spreadsheets/d/1y6TdPrs-iUrHZ8XDv7PoCdBa5uimSHwmgNj4dhZs5Lc
+  CSV: https://docs.google.com/spreadsheets/d/e/2PACX-1vQtmjheqdY7msmINYw4h8w4E-Sx1XLhtRTvBV4KohHumkF3JkyEFMhdJG2qyICYRujMxq5ZGiQ37RF1/pub?output=csv
+  MERGE: "row"
+  OUT_DIR: "config/_default/"
+  FILE_NAME: "" 
+  EXTENSION: ""
+
+  

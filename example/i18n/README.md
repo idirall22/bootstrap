@@ -1,24 +1,53 @@
-# i18n Test harness
-
-This shows how to use the i18n GoogleSheet tool.
-
-The GoogleSheets are here:
+# I18n Test harness
+- This shows how to use the i18n GoogleSheet tool.
+- The GoogleSheets are here:
 https://drive.google.com/drive/folders/1SvB8gOFuvD1IF8baU63Wcp0XTOVT1iSV?usp=sharing
+see the config sheet for what config to use.
+- hugo test website: https://github.com/bep/docuapi
+- Same as https://github.com/linode/docs, https://www.linode.com/docs/
 
-- see the config sheet for what config to use.
+# Default layout of a googlesheet file.
+- The first row in a googlesheet should be for __languages__.
+- The first column in a googlesheet should be for __filename__ or __keys__.
 
-## TODO
+# How to use GoogleSheet tool?
+1. Add a new object to config/hugoconfig.yml and populate these fields:
 
-0. DONE: Move to getcouragenow.org drive.
+Key|Value
+---|---
+ID| `1po7GuEo4H04HEPTuG6DFreenBDvJ2QKLUQiIRPKzEBI`
+URL|`https://docs.google.com/spreadsheets/d/...`
+CSV|`https://docs.google.com/spreadsheets/d/e/.../pub?output=csv`
+MERGE|you can choose how to merge googlesheet cells:`cell`, `column` or `row`. 
+OUT_DIR| Out folder path i.e: `outputs/content/` and use: `outputs/content/XXX/` and this generate multi language folders i.e: `outputs/content/en/`, `outputs/content/fr/` ...
+FILE_NAME| if __empty__ gsheet use default one on googlesheet. use `languages.XXX` to generate file with multi languages name i.e: `languages.en.toml`, `languages.fr.toml`...
+EXTENSION| for now only `.toml` is supported. 
 
-1. finish config.
+2. Install GoogleSheet tool.
 
-2. Make a simple simple Hugo site.
+3. Run googlesheet -option=hugo
 
-- https://github.com/bep/docuapi
+# When should I use `Cell`, `column`, or `row` in __MERGE__ field?
+- __cell__: When each cell in googlesheet represent a file.
+- __column__: when each column in googlesheet represent a file.
+- __row__: when each row in googlesheet represent a file.
 
-	- Same as https://github.com/linode/docs, https://www.linode.com/docs/
-
+# When should I use `/XXX/` tag in __OUT_DIR__?
+The __XXX__ tag is used to generate multilanguage __folders__ i.e:
+`OUT_DIR`: `"content/xxx/"`.
+this will generate folders for each language in content folder i.e:
+- content/
+    ------------/en/
+    ------------/fr/
+    ------------/de/
+# When should I use `.XXX` tag in __FILE_NAME__?
+The __XXX__ tag is used to generate multilanguage __files__ i.e:
+`FILE_NAME`: `"i18n/languages.xxx"`.
+this will generate a file for each language in i18n folder i.e:
+- i18n/
+    --------languages.en.toml
+    --------languages.fr.toml
+    --------languages.de.toml
 
 ## Hosting
 
