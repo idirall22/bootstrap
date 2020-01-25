@@ -22,8 +22,8 @@ import (
 
 // CleanTranslation struct used to clean hugo translations files
 type CleanTranslation struct {
-	Error *string `json:"error"`
-	Fixe  *string `json:"fixe"`
+	Error string `json:"error"`
+	Fix   string `json:"fix"`
 }
 
 // TomlFormat struct
@@ -499,7 +499,7 @@ func cleanData(data string, tagsFileDir, tagsFileName string) string {
 	cleanTags, _ := getCleanTranslationTags(tagsFileDir, tagsFileName)
 
 	for _, tag := range cleanTags {
-		cleanedData = strings.ReplaceAll(cleanedData, *tag.Error, *tag.Fixe)
+		cleanedData = strings.ReplaceAll(cleanedData, tag.Error, tag.Fix)
 	}
 	// for tagIndex, tag := range tagsToRemove {
 	// 	cleanedData = strings.ReplaceAll(cleanedData, tag, tagsToReplace[tagIndex])
