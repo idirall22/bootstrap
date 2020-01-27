@@ -1,12 +1,12 @@
 package services
 
 import (
+	"github.com/getcouragenow/bootstrap/tool/googlesheet/services"
+	"github.com/getcouragenow/bootstrap/tool/googlesheet/services/config"
 	"log"
 	"os"
 	"path"
 	"testing"
-
-	"github.com/getcouragenow/bootstrap/tool/googlesheet/services/config"
 )
 
 var (
@@ -60,7 +60,7 @@ func TestAll(t *testing.T) {
 // Test write languages in json file
 func testWriteLanguageFiles(t *testing.T) {
 	jsonDirPath := path.Join(absPath, outputsFolder)
-	err := WriteLanguageFiles(csvFilePathA, jsonDirPath, sheet)
+	err := services.WriteLanguageFiles(csvFilePathA, jsonDirPath, sheet)
 
 	if err != nil {
 		t.Error("Error to Write files ====>", err)
@@ -71,7 +71,7 @@ func testWriteLanguageFiles(t *testing.T) {
 // Test write dump data in json file
 func testWriteDataDumpFiles(t *testing.T) {
 	jsonDirPath := path.Join(absPath, outputsFolder)
-	err := WriteDataDumpFiles(csvFilePathA, jsonDirPath, "dump")
+	err := services.WriteDataDumpFiles(csvFilePathA, jsonDirPath, "dump")
 
 	if err != nil {
 		t.Error("Error to Write files ====>", err)
@@ -83,15 +83,15 @@ func testWriteDataDumpFiles(t *testing.T) {
 func testWriteHugoFiles(t *testing.T) {
 
 	//
-	if err := WriteHugoFiles(csvFilePathA, sheetA, "", ""); err != nil {
+	if err := services.WriteHugoFiles(csvFilePathA, sheetA, "", ""); err != nil {
 		t.Error("Error ====>", csvFilePathA, err)
 	}
 
-	if err := WriteHugoFiles(csvFilePathB, sheetB, "", ""); err != nil {
+	if err := services.WriteHugoFiles(csvFilePathB, sheetB, "", ""); err != nil {
 		t.Error("Error ====>", csvFilePathB, err)
 	}
 
-	if err := WriteHugoFiles(csvFilePathC, sheetC, "", ""); err != nil {
+	if err := services.WriteHugoFiles(csvFilePathC, sheetC, "", ""); err != nil {
 		t.Error("Error ====>", csvFilePathC, err)
 	}
 }
@@ -102,21 +102,21 @@ func download() {
 	csvFilePathB = path.Join(absPath, "sheet_b.csv")
 	csvFilePathC = path.Join(absPath, "sheet_c.csv")
 
-	if err := Download(sheetA.CSV, csvFilePathA, 5000, sheet, true); err != nil {
+	if err := services.Download(sheetA.CSV, csvFilePathA, 5000, sheet, true); err != nil {
 		log.Fatal("Error to download:", err)
 	}
 
-	if err := Download(sheetB.CSV, csvFilePathB, 5000, sheet, true); err != nil {
+	if err := services.Download(sheetB.CSV, csvFilePathB, 5000, sheet, true); err != nil {
 		log.Fatal("Error to download:", err)
 	}
 
-	if err := Download(sheetC.CSV, csvFilePathC, 5000, sheet, true); err != nil {
+	if err := services.Download(sheetC.CSV, csvFilePathC, 5000, sheet, true); err != nil {
 		log.Fatal("Error to download:", err)
 	}
 }
 
 func getAbsPath() {
-	absPath, err := GetAbsoluteFilePath("", sheet)
+	absPath, err := services.GetAbsoluteFilePath("", sheet)
 	if err != nil {
 		log.Fatal("Error to get Abs path:", err)
 	}

@@ -23,5 +23,5 @@ jobs:
         uses: actions/setup-go@v1
         with:
           go-version: ${{ matrix.go-version }}
-      - run: go test tool/goolesheet/services/file_test.go
+      - run: test tool/googlesheet/services/file_test.go 
 
