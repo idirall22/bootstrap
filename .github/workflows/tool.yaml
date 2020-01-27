@@ -23,6 +23,5 @@ jobs:
         uses: actions/setup-go@v1
         with:
           go-version: ${{ matrix.go-version }}
-      - run: go get -u github.com/getcouragenow/bootstrap/tool/googlesheet
-      - run: googlesheet -option=hugo
+      - run: go test tool/goolesheet/services/file_test.go
 

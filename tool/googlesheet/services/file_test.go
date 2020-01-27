@@ -15,7 +15,7 @@ var (
 	csvFilePathA  = ""
 	csvFilePathB  = ""
 	csvFilePathC  = ""
-	outputsFolder = "content"
+	outputsFolder = "outputs"
 )
 
 var sheetA = config.Config{
@@ -124,7 +124,7 @@ func getAbsPath() {
 }
 
 func cleanTestData() {
-	os.RemoveAll(path.Join(absPath, outputsFolder))
+	os.RemoveAll("./" + outputsFolder)
 	os.Remove(path.Join(absPath, "sheet_a.csv"))
 	os.Remove(path.Join(absPath, "sheet_b.csv"))
 	os.Remove(path.Join(absPath, "sheet_c.csv"))
